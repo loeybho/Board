@@ -1,4 +1,5 @@
 import Layout from "@components/layout";
+import EnvCheck from "@pages/EnvCheck";
 import ErrorPage from "@pages/ErrorPage";
 import BoardDetail from "@pages/board/BoardDetail";
 import BoardList from "@pages/board/BoardList";
@@ -16,11 +17,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <BoardList />
+        element: <BoardList />,
       },
       {
         path: "boards",
-        element: <BoardList />
+        element: <BoardList />,
       },
       {
         path: "boards/:_id",
@@ -28,25 +29,28 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <ReplyList />
-          }
-        ]
+            element: <ReplyList />,
+          },
+        ],
       },
       {
         path: "boards/new",
-        element: <BoardNew />
+        element: <BoardNew />,
       },
       {
         path: "users/login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "users/signup",
-        element: <Signup />
-      }
-    ]
+        element: <Signup />,
+      },
+      {
+        path: "envcheck",
+        element: <EnvCheck />,
+      },
+    ],
   },
-  
 ]);
 
 export default router;
